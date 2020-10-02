@@ -7,7 +7,7 @@ public interface AddressBookService {
 	
 	public void updateAPerson();
 	
-	
+	public void deleteAPerson();
 	
 	public void showOptions(AddressBook addressBook);
 	
