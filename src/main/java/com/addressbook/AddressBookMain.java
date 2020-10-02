@@ -1,7 +1,8 @@
 package com.addressbook;
 import java.util.*;
+
 public class AddressBookMain {
-	public static String creatContact() {
+	public static Contacts creatContact() {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter first name");
 		String fname=sc.nextLine();
@@ -20,12 +21,14 @@ public class AddressBookMain {
 	    System.out.println("Enter email");
 	    String email=sc.next();
 	    Contacts c1=new Contacts(fname,lname,address,city,state,zip,phoneNumber,email);
-	    System.out.println(c1);
-	    return fname+lname;	
+	    return c1;	
 	}
   public static void main(String[] args) {
 	System.out.println("Welcome to Address Book");
-	String name=creatContact();
-	System.out.println("New contact of name " +name +" is created");
+	Contacts c=creatContact();
+	AddressBook book=new AddressBook("B1");
+	book.addPersoncontact(c);
+	book.display();
+	
 }
 }
