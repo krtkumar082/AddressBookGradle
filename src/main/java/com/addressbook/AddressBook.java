@@ -19,10 +19,13 @@ public class AddressBook {
 	public void addPersoncontact(Contacts c) {
 		contacts.add(c);
 	}
-	public void display() {
-		for(int i=0;i<contacts.size();i++) {
-			System.out.println("Contact details of person " +i+1+ " is \n" +contacts.get(i));
-			System.out.println("\n");
+	public Contacts isPersonContain(String firstName) {
+		for(int i=0 ; i<contacts.size();i++) {
+			 if(contacts.get(i).getFirstName().equalsIgnoreCase(firstName)) {
+				 return contacts.get(i);
+				 
+			 }
 		}
+		return null;
 	}
 }
