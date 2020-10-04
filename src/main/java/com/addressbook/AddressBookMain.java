@@ -1,34 +1,57 @@
 package com.addressbook;
 import java.util.*;
+import com.service.AddressBookService;
+import com.impl.AddressBookServiceImpl;
+import com.addressbook.AddressBook;
+
 
 public class AddressBookMain {
-	public static Contacts creatContact() {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter first name");
-		String fname=sc.nextLine();
-		System.out.println("Enter last name");
-		String lname=sc.nextLine();
-		System.out.println("Enter address");
-		String address=sc.nextLine();
-		System.out.println("Enter city");
-		String city=sc.nextLine();
-		System.out.println("Enter state");
-		String state=sc.nextLine();
-		System.out.println("Enter zip");
-		String zip=sc.nextLine();
-		System.out.println("Enter phone number");
-	    long phoneNumber=sc.nextLong();
-	    System.out.println("Enter email");
-	    String email=sc.next();
-	    Contacts c1=new Contacts(fname,lname,address,city,state,zip,phoneNumber,email);
-	    return c1;	
-	}
-  public static void main(String[] args) {
-	System.out.println("Welcome to Address Book");
-	Contacts c=creatContact();
-	AddressBook book=new AddressBook("B1");
-	book.addPersoncontact(c);
-	book.display();
 	
+  public static void main(String[] args) {
+	  Scanner sc = new Scanner(System.in);
+		AddressBooks addressBooks = new AddressBooks();
+		AddressBookService addressBookService = new AddressBookServiceImpl(sc);
+		System.out.println("Welcome to AddressBook");
+		while (true) {
+			System.out.println("1.) Open an existing Address book");
+			System.out.println("2.) Create new Address Book");
+			System.out.println("3.) Exit");
+			int options = sc.nextInt();
+
+			switch (options) {
+			case 1:
+			openExistingAddressBook(addressBookService, addressBooks,sc);
+				break;
+			case 2:
+				createNewAddressBook(addressBookService, addressBooks, sc);
+				break;
+			case 3:
+				System.out.println("Bye\n\n");
+				return;
+			default:
+				break;
+			}
+		}
+
+	}
+	
+	public static void openExistingAddressBook(AddressBookService addressBookService,AddressBooks addressBooks,Scanner sc) {
+		System.out.print("Enter Name");
+		String name = sc.next();
+		AddressBook addressBook = addressBooks.containdAddressBook(name);
+		if(Objects.nonNull(addressBook)) {
+			addressBookService.showOptions(addressBook);
+			return;
+	}
+		System.out.println("Not Address Book Found");
+	}
+	
+	public static void createNewAddressBook(AddressBookService addressBookService,AddressBooks addressBooks ,Scanner sc) {
+		System.out.print("Enter Name");
+		String name = sc.next();
+		AddressBook addressBook = addressBookService.createAddressBook(name);
+		addressBooks.addAddressBook(addressBook);
+		System.out.print("Created\n\n");
+	}
 }
-}
+

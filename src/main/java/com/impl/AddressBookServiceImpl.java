@@ -84,6 +84,10 @@ public class AddressBookServiceImpl implements AddressBookService {
 		addressBook.addPersoncontact(personService.createPerson());
 	}
 
-	
+	@Override
+	public AddressBook createAddressBook(String name) {
+		AddressBook addressBook= new AddressBook(name);
+		return addressBook;
+	}
 
 }
