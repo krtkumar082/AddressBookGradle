@@ -10,6 +10,7 @@ public interface AddressBookService {
 	public void deleteAPerson();
 	
 	public void showOptions(AddressBook addressBook);
-	
+	public AddressBook createAddressBook(String name);
+
 	
 }
