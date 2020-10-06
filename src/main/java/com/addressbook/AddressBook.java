@@ -1,6 +1,7 @@
 package com.addressbook;
 import java.util.*;
-
+import java.util.function.Predicate;
+import com.addressbook.Contacts;
 public class AddressBook {
     private String name;
     private List<Contacts> contacts;
@@ -17,6 +18,11 @@ public class AddressBook {
 		this.name = name;
 	}
 	public void addPersoncontact(Contacts c) {
+		boolean present = contacts.stream().anyMatch(n -> n.getFirstName().equalsIgnoreCase(c.getFirstName()));
+		if(present) {
+			System.out.println("Already contact is present");
+		}
+		else
 		contacts.add(c);
 	}
 	public Contacts isPersonContain(String firstName) {
