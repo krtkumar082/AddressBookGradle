@@ -56,6 +56,19 @@ public class AddressBook {
 		}
 	}
 	
-	
+	public void sortByCity() {
+		getContactList().stream().sorted((n1, n2) -> n1.getCity().compareTo(n2.getCity()))
+				.forEach(n -> System.out.println(n));
+	}
+
+	public void sortByState() {
+		getContactList().stream().sorted((n1, n2) -> n1.getState().compareTo(n2.getState()))
+				.forEach(n -> System.out.println(n));
+	}
+
+	public void sortByZip() {
+		getContactList().stream().sorted((n1, n2) -> n1.getZip().compareTo(n2.getZip()))
+				.forEach(n -> System.out.println(n));
+	}
 	
 }
