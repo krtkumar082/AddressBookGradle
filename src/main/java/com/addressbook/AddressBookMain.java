@@ -18,7 +18,9 @@ public class AddressBookMain {
 			System.out.println("2.) Create new Address Book");
 			System.out.println("3.) Search Contact by city");
 			System.out.println("4.) Search Contact by state");
-			System.out.println("5.) Exit");
+			System.out.println("5.) count Contact by city");
+			System.out.println("6.) count Contact by state");
+			System.out.println("7.) Exit");
 			int options = sc.nextInt();
 
 			switch (options) {
@@ -37,7 +39,16 @@ public class AddressBookMain {
 		           String state=sc.next();
 		          addressBooks.searchByState(state);
 		          break;
-			case 5:
+			case 5:System.out.println("Enter city name");
+		       	   String city1=sc.next();
+		       	   addressBooks.countByCity(city1);
+		       	   break;
+		       
+			case 6:System.out.println("Enter state name");
+	           	   String state1=sc.next();
+	           	   addressBooks.countByState(state1);
+	           	   break;
+			case 7:
 				System.out.println("Bye\n\n");
 				return;
 			default:
