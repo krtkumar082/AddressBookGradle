@@ -2,6 +2,7 @@ package com.addressbook;
 import java.util.*;
 import java.util.function.Predicate;
 import com.addressbook.Contacts;
+import java.util.stream.Collectors;
 public class AddressBook {
     private String name;
     private List<Contacts> contacts;
@@ -21,6 +22,10 @@ public class AddressBook {
   public List<Contacts> getContactList(){
 	  return contacts;
   }
+  public List<Contacts> showAllContacts(){
+		return getContactList().stream().sorted((n1,n2) -> n1.getFirstName().compareTo(n2.getFirstName())).collect(Collectors.toList());
+	}
+  
 	public void setName(String name) {
 		this.name = name;
 	}
