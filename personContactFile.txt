@@ -1,0 +1,30 @@
+First Name: Kirti
+Last Name: Kumar
+Address: sik
+City: sik
+State: raj
+Zip: 331313
+Phone Number: 91 9999999999
+Email: abc@google.com
+
+
+First Name: Deepak
+Last Name: Kumar
+Address: sik
+City: sik
+State: raj
+Zip: 332315
+Phone Number: 91 8888888888
+Email: abc@gmail.com
+
+
+First Name: Kk
+Last Name: Fenin
+Address: jap
+City: jap
+State: raj
+Zip: 332316
+Phone Number: 91 7777777777
+Email: asdf@yahoo.com
+
+
