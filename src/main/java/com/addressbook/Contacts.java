@@ -7,14 +7,15 @@ public class Contacts {
     private String city;
     private String state;
     private String zip;
-    private long phoneNumber;
+    private String phoneNumber;
     private String email;
      
     public Contacts() {
     	
     }
     
-    public Contacts(String firstName,String lastName,String address,String city,String state,String zip,long phoneNumber,String email) {
+    public Contacts(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email) {
+    	super();
     	this.firstName=firstName;
     	this.lastName=lastName;
     	this.address=address;
@@ -60,7 +61,7 @@ public class Contacts {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
-	public Long getPhone() {
+	public String getPhone() {
 		return phoneNumber;
 	}
 	public void setPhone(Long phone) {
