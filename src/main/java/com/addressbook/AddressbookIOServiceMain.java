@@ -13,8 +13,8 @@ public class AddressbookIOServiceMain {
 	contactList.add(contact1);
 	contactList.add(contact2);
 	contactList.add(contact3);
-	addressBookFileIOService.writeData(contactList);
-	addressBookFileIOService.readData();
+	addressBookFileIOService.writeCSVData(contactList);
+	addressBookFileIOService.readCSVData();
 }
 }
 
