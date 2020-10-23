@@ -15,6 +15,16 @@ public class AddressbookIOServiceMain {
 	contactList.add(contact3);
 	addressBookFileIOService.writeCSVData(contactList);
 	addressBookFileIOService.readCSVData();
+	
+	List<Contacts> readList =addressBookFileIOService.readCSVData();
+	System.out.println("Contacts read from the file are:");
+	for(Contacts contact : readList) {
+		System.out.println(contact);
+	}
+	System.out.println(readList.size());
+	
+	addressBookFileIOService.writeJson(contactList);
+	addressBookFileIOService.readJson();
 }
 }
 
